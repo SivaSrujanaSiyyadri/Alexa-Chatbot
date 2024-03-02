@@ -1,0 +1,257 @@
+{
+  "interactionModel": {
+    "dialog": {
+      "intents": [
+        {
+          "slots": [
+            {
+              "name": "month",
+              "elicitationRequired": true,
+              "type": "AMAZON.Month",
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.422315531614.784640645060"
+              }
+            },
+            {
+              "name": "day",
+              "elicitationRequired": true,
+              "type": "AMAZON.Ordinal",
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.422315531614.1089461443623"
+              }
+            },
+            {
+              "name": "year",
+              "elicitationRequired": true,
+              "type": "AMAZON.FOUR_DIGIT_NUMBER",
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.422315531614.423955528159"
+              }
+            }
+          ],
+          "name": "CaptureZodiacSignIntent",
+          "confirmationRequired": false,
+          "prompts": {}
+        },
+        {
+          "slots": [
+            {
+              "name": "genre",
+              "elicitationRequired": true,
+              "type": "AMAZON.Genre",
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.476239730346.1180627865550"
+              }
+            },
+            {
+              "name": "movie",
+              "elicitationRequired": false,
+              "type": "AMAZON.AlphaNumeric",
+              "confirmationRequired": false,
+              "prompts": {}
+            },
+            {
+              "name": "language",
+              "elicitationRequired": true,
+              "type": "AMAZON.Language",
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.476239730346.1652740157464"
+              }
+            },
+            {
+              "name": "actor",
+              "elicitationRequired": true,
+              "type": "AMAZON.Actor",
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.476239730346.530510224164"
+              }
+            }
+          ],
+          "name": "CaptureMovieDetailsIntent",
+          "confirmationRequired": false,
+          "prompts": {}
+        }
+      ],
+      "delegationStrategy": "ALWAYS"
+    },
+    "languageModel": {
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.FallbackIntent",
+          "samples": []
+        },
+        {
+          "slots": [
+            {
+              "multipleValues": {
+                "enabled": true
+              },
+              "name": "month",
+              "type": "AMAZON.Month"
+            },
+            {
+              "multipleValues": {
+                "enabled": true
+              },
+              "name": "day",
+              "type": "AMAZON.Ordinal"
+            },
+            {
+              "multipleValues": {
+                "enabled": false
+              },
+              "name": "year",
+              "type": "AMAZON.FOUR_DIGIT_NUMBER"
+            }
+          ],
+          "name": "CaptureZodiacSignIntent",
+          "samples": [
+            "Tell me the zodiac sign for someone born on {month} {day} {year}",
+            "Find my zodiac sign for {month} {day} of {year}",
+            "What zodiac sign do I have if I was born on {month} {day}",
+            "If my birthday is {month} {day} tell me my zodiac sign",
+            "Determine the zodiac sign for the date {month} {day} {year}",
+            "For a birthdate of {month} {day} what zodiac sign is associated",
+            "What\u0027s the zodiac sign if I\u0027m born on the {month} {day} of {year}",
+            "If someone is born on {month} {day} what is their zodiac sign",
+            "Tell me the zodiac sign for a birthday on {month} {day}",
+            "Which zodiac sign corresponds to {month} {day}",
+            "Find my zodiac sign for the date {month} {day} {year}",
+            "Tell me the zodiac sign for {month} {day} {year}",
+            "What\u0027s the zodiac sign for someone born on {month} {day}",
+            "Which zodiac sign am I if my birthday is on {month} {day}",
+            "Find out my zodiac sign for {month} {day} in {year}",
+            "What zodiac sign corresponds to a birthday of {month} {day} {year}",
+            "Determine my zodiac sign for {month} {day} {year}",
+            "What\u0027s my zodiac sign",
+            "Tell me my zodiac sign for {month} {day} {year}",
+            "What is my zodiac sign for {month} {day}",
+            "I was born on {month} {day} {year}"
+          ]
+        },
+        {
+          "slots": [
+            {
+              "name": "genre",
+              "type": "AMAZON.Genre"
+            },
+            {
+              "name": "movie",
+              "type": "AMAZON.AlphaNumeric"
+            },
+            {
+              "multipleValues": {
+                "enabled": true
+              },
+              "name": "language",
+              "type": "AMAZON.Language"
+            },
+            {
+              "multipleValues": {
+                "enabled": true
+              },
+              "name": "actor",
+              "type": "AMAZON.Actor"
+            }
+          ],
+          "name": "CaptureMovieDetailsIntent",
+          "samples": [
+            "Tell me some films that include {actor}",
+            "what is the original {language} of the {movie} released first",
+            "Describe the {movie}",
+            "What is the {genre} of {movie}"
+          ]
+        }
+      ],
+      "types": [],
+      "invocationName": "get hackathon zodiac details"
+    },
+    "prompts": [
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "What month were you born"
+          }
+        ],
+        "id": "Elicit.Slot.422315531614.784640645060"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "What day were you born"
+          }
+        ],
+        "id": "Elicit.Slot.422315531614.1089461443623"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "What year were you born"
+          }
+        ],
+        "id": "Elicit.Slot.422315531614.423955528159"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "What is the genre "
+          }
+        ],
+        "id": "Elicit.Slot.476239730346.1180627865550"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Give me any movie name"
+          }
+        ],
+        "id": "Elicit.Slot.476239730346.1542120272050"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "In which language  movie is originated to?"
+          }
+        ],
+        "id": "Elicit.Slot.476239730346.1652740157464"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Who is the actor in the movie Avatar"
+          }
+        ],
+        "id": "Elicit.Slot.476239730346.530510224164"
+      }
+    ]
+  }
+}
